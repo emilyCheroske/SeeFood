@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rwQ-7f-aJG">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SeeFood-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SeeFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mmv-Bn-EYi">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mediumhotdog" translatesAutoresizingMaskIntoConstraints="NO" id="EEE-rL-pNO">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="nxV-R3-k2x"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3WH-Yt-QYF">
+                                        <rect key="frame" x="0.0" y="90.5" width="414" height="665.5"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mmv-Bn-EYi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Tbf-eK-avn"/>
+                            <constraint firstAttribute="trailing" secondItem="mmv-Bn-EYi" secondAttribute="trailing" id="U1B-Z5-cN0"/>
+                            <constraint firstItem="mmv-Bn-EYi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="srb-cU-ZeK"/>
+                            <constraint firstAttribute="bottom" secondItem="mmv-Bn-EYi" secondAttribute="bottom" id="tYY-7y-SW5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="SeeFood" id="nzf-cb-Ppn">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arkit" catalog="system" id="o2F-qs-3bj">
+                            <color key="tintColor" red="0.94905394320000003" green="0.94874149559999998" blue="0.96863073109999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="ARButtonPressed:" destination="BYZ-38-t0r" id="Fz4-JC-IJp"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="qCm-Lh-ezq">
+                                <color key="tintColor" red="0.94905394315719604" green="0.94874149560928345" blue="0.96863073110580444" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="CameraTapped:" destination="BYZ-38-t0r" id="TOq-sZ-kRz"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="kH7-pi-waT">
+                                <color key="tintColor" red="0.94905394315719604" green="0.94874149560928345" blue="0.96863073110580444" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="PhotoLibraryPressed:" destination="BYZ-38-t0r" id="SLz-92-2Ow"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="3WH-Yt-QYF" id="1hD-wx-7Y7"/>
+                        <outlet property="messageImage" destination="EEE-rL-pNO" id="fVv-iM-MLi"/>
+                        <segue destination="aTj-IM-voE" kind="show" identifier="showAR" id="9ox-2t-rMf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Scene Kit View Controller-->
+        <scene sceneID="L4k-fP-BDI">
+            <objects>
+                <viewController id="aTj-IM-voE" customClass="SceneKitViewController" customModule="SeeFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9xg-m5-WTO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwg-Ei-8Wv">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKW-Nc-ijk">
+                                <rect key="frame" x="57" y="772" width="300" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Tp1-qO-zs0"/>
+                                    <constraint firstAttribute="height" constant="60" id="XfF-m2-8pr"/>
+                                </constraints>
+                                <state key="normal" title="Capture hot dog" image="hotdogpicture"/>
+                                <connections>
+                                    <action selector="CaptureHotDog:" destination="aTj-IM-voE" eventType="touchUpInside" id="Vmo-Rb-aY1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Tap to Add Hot Dog to Scene)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rL-D5-ArD">
+                                <rect key="frame" x="89.5" y="155" width="235" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.94905394320000003" green="0.94874149559999998" blue="0.96863073109999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zwg-Ei-8Wv" firstAttribute="top" secondItem="Mun-X9-EDT" secondAttribute="top" id="2Su-DF-xxR"/>
+                            <constraint firstItem="9rL-D5-ArD" firstAttribute="top" secondItem="Mun-X9-EDT" secondAttribute="top" constant="15" id="FLb-ZT-GFq"/>
+                            <constraint firstAttribute="bottom" secondItem="zwg-Ei-8Wv" secondAttribute="bottom" id="HRN-sP-ztY"/>
+                            <constraint firstItem="Mun-X9-EDT" firstAttribute="bottom" secondItem="YKW-Nc-ijk" secondAttribute="bottom" constant="30" id="Icr-m9-j19"/>
+                            <constraint firstItem="Mun-X9-EDT" firstAttribute="trailing" secondItem="zwg-Ei-8Wv" secondAttribute="trailing" id="Nj6-xR-9K9"/>
+                            <constraint firstItem="9rL-D5-ArD" firstAttribute="centerX" secondItem="9xg-m5-WTO" secondAttribute="centerX" id="Tuf-vg-GWA"/>
+                            <constraint firstItem="YKW-Nc-ijk" firstAttribute="centerX" secondItem="9xg-m5-WTO" secondAttribute="centerX" id="VKl-WY-n4K"/>
+                            <constraint firstItem="zwg-Ei-8Wv" firstAttribute="leading" secondItem="Mun-X9-EDT" secondAttribute="leading" id="ZLd-pe-Mq2"/>
+                            <constraint firstItem="YKW-Nc-ijk" firstAttribute="centerX" secondItem="9xg-m5-WTO" secondAttribute="centerX" id="quV-MM-ZxX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mun-X9-EDT"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Iy8-Ix-bBE"/>
+                    <connections>
+                        <outlet property="sceneView" destination="zwg-Ei-8Wv" id="oiW-Dn-cyd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8zR-qI-EY9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1943" y="122"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ddm-eI-8f3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rwQ-7f-aJG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="CZr-a1-A45">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1176455095410347" green="0.11764601618051529" blue="0.11764710396528244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                            <color key="textColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textShadowColor" red="0.4000964165" green="0.41926127670000002" blue="0.44314140079999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cSV-Zk-ypy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CYk-oZ-tn8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arkit" catalog="system" width="64" height="62"/>
+        <image name="camera.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="hotdogpicture" width="1000" height="200"/>
+        <image name="mediumhotdog" width="1000" height="200"/>
+    </resources>
+</document>

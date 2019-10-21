@@ -1,0 +1,22 @@
+PODS:
+  - ChameleonFramework (2.1.0):
+    - ChameleonFramework/Default (= 2.1.0)
+  - ChameleonFramework/Default (2.1.0)
+  - SwiftySound (1.1.0)
+
+DEPENDENCIES:
+  - ChameleonFramework
+  - SwiftySound
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ChameleonFramework
+    - SwiftySound
+
+SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  SwiftySound: eb46cc2399cf7d94f58c372f38216e15e0a6de3e
+
+PODFILE CHECKSUM: 5cb10caf18c20083bddbb5ab7230a52969d0c081
+
+COCOAPODS: 1.5.3
