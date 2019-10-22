@@ -28,6 +28,8 @@ class SceneKitViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
 
         //sceneView.showsStatistics = true
+        
+        //addLight()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +68,15 @@ class SceneKitViewController: UIViewController, ARSCNViewDelegate {
                         hitresult.worldTransform.columns.3.y,
                         hitresult.worldTransform.columns.3.z)
                     
+                    let bunMaterial = SCNMaterial()
+                    bunMaterial.lightingModel = .shadowOnly
+                    bunMaterial.diffuse.contents = UIImage(named: "sceneKitAssets.scnassets/hotdog_texture2.jpg")
+                    bunMaterial.normal.contents = UIImage(named: "sceneKitAssets.scnassets/hotdog_texture2_NORM.jpg")
+                    bunMaterial.normal.intensity = 0.5
+                    bunMaterial.metalness.contents = 0.8
+                    bunMaterial.roughness.contents = 0.2
+                    bunNode.geometry?.firstMaterial = bunMaterial
+                    
                     sceneView.scene.rootNode.addChildNode(bunNode)
                 }
                 
@@ -75,6 +86,15 @@ class SceneKitViewController: UIViewController, ARSCNViewDelegate {
                         hitresult.worldTransform.columns.3.x,
                         hitresult.worldTransform.columns.3.y,
                         hitresult.worldTransform.columns.3.z)
+                    
+                    let ketchupMaterial = SCNMaterial()
+                    ketchupMaterial.lightingModel = .shadowOnly
+                    ketchupMaterial.diffuse.contents = UIImage(named: "sceneKitAssets.scnassets/hotdog_texture2.jpg")
+                    ketchupMaterial.normal.contents = UIImage(named: "sceneKitAssets.scnassets/hotdog_texture2_NORM.jpg")
+                    ketchupMaterial.normal.intensity = 0.5
+                    ketchupMaterial.metalness.contents = 0.8
+                    ketchupMaterial.roughness.contents = 0.2
+                    ketchupNode.geometry?.firstMaterial = ketchupMaterial
                     
                     sceneView.scene.rootNode.addChildNode(ketchupNode)
                 }
@@ -86,6 +106,15 @@ class SceneKitViewController: UIViewController, ARSCNViewDelegate {
                         hitresult.worldTransform.columns.3.y,
                         hitresult.worldTransform.columns.3.z)
                     
+                    let mustardMaterial = SCNMaterial()
+                    mustardMaterial.lightingModel = .shadowOnly
+                    mustardMaterial.diffuse.contents = UIImage(named: "sceneKitAssets.scnassets/hotdog_texture2.jpg")
+                    mustardMaterial.normal.contents = UIImage(named: "sceneKitAssets.scnassets/hotdog_texture2_NORM.jpg")
+                    mustardMaterial.normal.intensity = 0.5
+                    mustardMaterial.metalness.contents = 0.8
+                    mustardMaterial.roughness.contents = 0.2
+                    mustardNode.geometry?.firstMaterial = mustardMaterial
+                    
                     sceneView.scene.rootNode.addChildNode(mustardNode)
                 }
                 
@@ -96,10 +125,35 @@ class SceneKitViewController: UIViewController, ARSCNViewDelegate {
                         hitresult.worldTransform.columns.3.y,
                         hitresult.worldTransform.columns.3.z)
                     
+                    let hotdogMaterial = SCNMaterial()
+                    hotdogMaterial.lightingModel = .shadowOnly
+                    hotdogMaterial.diffuse.contents = UIImage(named: "sceneKitAssets.scnassets/hotdog_texture2.jpg")
+                    hotdogMaterial.normal.contents = UIImage(named: "sceneKitAssets.scnassets/hotdog_texture2_NORM.jpg")
+                    hotdogMaterial.normal.intensity = 0.5
+                    hotdogMaterial.metalness.contents = 0.8
+                    hotdogMaterial.roughness.contents = 0.2
+                    hotdogNode.geometry?.firstMaterial = hotdogMaterial
+                    
                     sceneView.scene.rootNode.addChildNode(hotdogNode)
                 }
             }
         }
+    }
+    
+    func addLight() {
+        let directionalLight = SCNLight()
+        directionalLight.type = .directional
+        directionalLight.intensity = 0
+        directionalLight.castsShadow = true
+        directionalLight.shadowMode = .deferred
+        directionalLight.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        directionalLight.shadowSampleCount = 10
+        
+        let directionalLightNode = SCNNode()
+        directionalLightNode.light = directionalLight
+        directionalLightNode.rotation = SCNVector4Make(1, 0, 0, -Float.pi / 3)
+        
+        sceneView.scene.rootNode.addChildNode(directionalLightNode)
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
@@ -115,11 +169,13 @@ class SceneKitViewController: UIViewController, ARSCNViewDelegate {
             
             planeNode.transform = SCNMatrix4MakeRotation(-Float.pi/2, 1, 0, 0)
             
-            let gridMaterial = SCNMaterial()
-            gridMaterial.diffuse.contents = UIImage(named: "sceneKitAssets.scnassets/grid.png")
-
-            plane.materials = [gridMaterial]
+//            let gridMaterial = SCNMaterial()
+//            gridMaterial.diffuse.contents = UIImage(named: "sceneKitAssets.scnassets/grid.png")
+//
+//            plane.materials = [gridMaterial]
             planeNode.geometry = plane
+            
+            plane.firstMaterial?.colorBufferWriteMask = .init(rawValue: 0)
             
             node.addChildNode(planeNode)
             
