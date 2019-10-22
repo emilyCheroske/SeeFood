@@ -10,8 +10,7 @@
 		12AF2365ED0A6965DC67B9D2 /* Pods_SeeFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4150C97BFD3FF644F318E43 /* Pods_SeeFood.framework */; };
 		9F182975235CFD96009252E8 /* sceneKitAssets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F182974235CFD96009252E8 /* sceneKitAssets.scnassets */; };
 		9F182977235CFFE2009252E8 /* SceneKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F182976235CFFE2009252E8 /* SceneKitViewController.swift */; };
-		9F182979235D4B1C009252E8 /* chime.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F182978235D4B1C009252E8 /* chime.wav */; };
-		9F18297B235D4CA8009252E8 /* chime2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F18297A235D4CA8009252E8 /* chime2.wav */; };
+		9F18297B235D4CA8009252E8 /* chime.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F18297A235D4CA8009252E8 /* chime.wav */; };
 		9FFB06E323541AE6003D5A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFB06E223541AE6003D5A00 /* AppDelegate.swift */; };
 		9FFB06E523541AE6003D5A00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFB06E423541AE6003D5A00 /* SceneDelegate.swift */; };
 		9FFB06E723541AE6003D5A00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFB06E623541AE6003D5A00 /* ViewController.swift */; };
@@ -26,8 +25,7 @@
 		4EC112C4D233E2DE5162A4C3 /* Pods-SeeFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeFood.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeeFood/Pods-SeeFood.release.xcconfig"; sourceTree = "<group>"; };
 		9F182974235CFD96009252E8 /* sceneKitAssets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = sceneKitAssets.scnassets; sourceTree = "<group>"; };
 		9F182976235CFFE2009252E8 /* SceneKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneKitViewController.swift; sourceTree = "<group>"; };
-		9F182978235D4B1C009252E8 /* chime.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = chime.wav; sourceTree = "<group>"; };
-		9F18297A235D4CA8009252E8 /* chime2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = chime2.wav; sourceTree = "<group>"; };
+		9F18297A235D4CA8009252E8 /* chime.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = chime.wav; sourceTree = "<group>"; };
 		9FFB06DF23541AE6003D5A00 /* SeeFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFB06E223541AE6003D5A00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FFB06E423541AE6003D5A00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +50,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F18297D235EAF9F009252E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9FFB06ED23541AE7003D5A00 /* LaunchScreen.storyboard */,
+				9FFB06E823541AE6003D5A00 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9F18297E235EAFBE009252E8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9FFB06E623541AE6003D5A00 /* ViewController.swift */,
+				9F182976235CFFE2009252E8 /* SceneKitViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		9FFB06D623541AE6003D5A00 = {
 			isa = PBXGroup;
 			children = (
@@ -73,18 +89,15 @@
 		9FFB06E123541AE6003D5A00 /* SeeFood */ = {
 			isa = PBXGroup;
 			children = (
-				9F182978235D4B1C009252E8 /* chime.wav */,
-				9F18297A235D4CA8009252E8 /* chime2.wav */,
-				9FFB073A23595E88003D5A00 /* Inceptionv3.mlmodel */,
-				9FFB06E223541AE6003D5A00 /* AppDelegate.swift */,
-				9FFB06E423541AE6003D5A00 /* SceneDelegate.swift */,
-				9FFB06E623541AE6003D5A00 /* ViewController.swift */,
-				9FFB06E823541AE6003D5A00 /* Main.storyboard */,
+				9F18297E235EAFBE009252E8 /* Controllers */,
+				9F18297D235EAF9F009252E8 /* Views */,
+				9F18297A235D4CA8009252E8 /* chime.wav */,
 				9FFB06EB23541AE7003D5A00 /* Assets.xcassets */,
-				9FFB06ED23541AE7003D5A00 /* LaunchScreen.storyboard */,
+				9FFB06E423541AE6003D5A00 /* SceneDelegate.swift */,
+				9FFB06E223541AE6003D5A00 /* AppDelegate.swift */,
+				9FFB073A23595E88003D5A00 /* Inceptionv3.mlmodel */,
 				9FFB06F023541AE7003D5A00 /* Info.plist */,
 				9F182974235CFD96009252E8 /* sceneKitAssets.scnassets */,
-				9F182976235CFFE2009252E8 /* SceneKitViewController.swift */,
 			);
 			path = SeeFood;
 			sourceTree = "<group>";
@@ -168,10 +181,9 @@
 			files = (
 				9FFB06EF23541AE7003D5A00 /* LaunchScreen.storyboard in Resources */,
 				9FFB06EC23541AE7003D5A00 /* Assets.xcassets in Resources */,
-				9F18297B235D4CA8009252E8 /* chime2.wav in Resources */,
+				9F18297B235D4CA8009252E8 /* chime.wav in Resources */,
 				9F182975235CFD96009252E8 /* sceneKitAssets.scnassets in Resources */,
 				9FFB06EA23541AE6003D5A00 /* Main.storyboard in Resources */,
-				9F182979235D4B1C009252E8 /* chime.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

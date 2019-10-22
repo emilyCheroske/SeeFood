@@ -59,7 +59,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if let firstResult = results.first {
                 if(firstResult.identifier.contains("hotdog")) {
                     self.messageImage.image = UIImage(named: "goodhotdog")
-                    Sound.play(file: "chime2.wav")
+                    Sound.play(file: "chime.wav")
                 } else {
                     self.messageImage.image = UIImage(named: "badhotdog")
                 }
