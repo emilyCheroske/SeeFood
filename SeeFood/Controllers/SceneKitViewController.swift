@@ -92,7 +92,7 @@ class SceneKitViewController: UIViewController, ARSCNViewDelegate {
                     ketchupMaterial.diffuse.contents = UIImage(named: "sceneKitAssets.scnassets/hotdog_texture2.jpg")
                     ketchupMaterial.normal.contents = UIImage(named: "sceneKitAssets.scnassets/hotdog_texture2_NORM.jpg")
                     ketchupMaterial.normal.intensity = 0.5
-                    ketchupMaterial.metalness.contents = 0.6
+                    ketchupMaterial.metalness.contents = 0.1
                     ketchupMaterial.roughness.contents = 0.3
                     ketchupNode.geometry?.firstMaterial = ketchupMaterial
                     
@@ -111,7 +111,7 @@ class SceneKitViewController: UIViewController, ARSCNViewDelegate {
                     mustardMaterial.diffuse.contents = UIImage(named: "sceneKitAssets.scnassets/hotdog_texture2.jpg")
                     mustardMaterial.normal.contents = UIImage(named: "sceneKitAssets.scnassets/hotdog_texture2_NORM.jpg")
                     mustardMaterial.normal.intensity = 0.5
-                    mustardMaterial.metalness.contents = 0.6
+                    mustardMaterial.metalness.contents = 0.1
                     mustardMaterial.roughness.contents = 0.3
                     mustardNode.geometry?.firstMaterial = mustardMaterial
                     
